@@ -1,10 +1,11 @@
 package it.core;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EntryToQueryParamTest {
 
@@ -16,6 +17,6 @@ class EntryToQueryParamTest {
         final String got = query.entrySet().stream().map(new EntryToQueryParam()).findFirst().get();
         String expected = "John=+%26";
 
-        Assert.assertEquals(expected,got);
+        assertEquals(expected, got);
     }
 }
